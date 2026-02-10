@@ -158,4 +158,56 @@ dn_lq_ak_mindist
     ## 2 2900 Denali         2.04
     ## 3 3850 Debarr Road    6.00
 
-\`\`\`
+…
+
+### Exercise 8
+
+``` r
+# summary statistics
+summary(dn_lq_ak_mindist)
+```
+
+    ##   address.x            closest     
+    ##  Length:3           Min.   :2.035  
+    ##  Class :character   1st Qu.:3.616  
+    ##  Mode  :character   Median :5.197  
+    ##                     Mean   :4.410  
+    ##                     3rd Qu.:5.598  
+    ##                     Max.   :5.998
+
+``` r
+# visualize! 
+ggplot(dn_lq_ak_mindist, aes(x = closest, y = 0)) +
+  geom_point(size = 3, color = "plum4") +
+  labs(
+    x = "Distance to nearest La Quinta (km)",
+    y = "",
+    title = "Distances from Denny's to Nearest La Quinta in Alaska"
+  ) +
+  theme(axis.text.y = element_blank(),
+        axis.ticks.y = element_blank())
+```
+
+![](lab-05_files/figure-gfm/distribution-minAK-1.png)<!-- -->
+
+…
+
+### Exercise 9
+
+…
+
+### Exercise 10
+
+…
+
+### Exercise 11
+
+…
+
+### Exercise 12
+
+…
+
+### Exercise 13
+
+…

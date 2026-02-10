@@ -125,10 +125,85 @@ dn_lq_ak_mindist <- dn_lq_ak %>%
 dn_lq_ak_mindist
 ```
 
+...
+
+### Exercise 8
+```{r distribution-minAK}
+
+# summary statistics
+summary(dn_lq_ak_mindist)
+
+# visualize! 
+ggplot(dn_lq_ak_mindist, aes(x = closest, y = 0)) +
+  geom_point(size = 3, color = "plum4") +
+  labs(
+    x = "Distance to nearest La Quinta (km)",
+    y = "",
+    title = "Distances from Denny's to Nearest La Quinta in Alaska"
+  ) +
+  theme(axis.text.y = element_blank(),
+        axis.ticks.y = element_blank())
 
 ```
 
+...
 
+### Exercise 9
+```{r}
+
+
+
+
+
+```
+
+...
+
+
+### Exercise 10
+```{r}
+
+
+
+
+
+```
+
+...
+
+### Exercise 11
+```{r}
+
+
+
+
+
+```
+
+...
+
+
+### Exercise 12
+```{r}
+
+
+
+
+
+```
+
+...
+
+### Exercise 13
+```{r}
+
+
+
+
+
+```
+
+...
 
 
 
