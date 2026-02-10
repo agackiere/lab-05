@@ -16,15 +16,32 @@ states <- read_csv("data/states.csv")
 
 ### Exercise 1
 
-Remove this text, and add your answer for Exercise 1 here. Add code
-chunks as needed. Don’t forget to label your code chunk. Do not use
-spaces in code chunk labels.
+``` r
+# Filter the Denny’s df for Alaska
+dn_ak <- dennys %>%
+  filter(state == "AK")
+nrow(dn_ak)
+```
+
+    ## [1] 3
+
+``` r
+# Filter the La Quinta df for Alaska
+lq_ak <- laquinta %>%
+  filter(state == "AK")
+nrow(lq_ak)
+```
+
+    ## [1] 2
+
+There are 3 Denny’s locations in Alaska and 2La Quinta locations in
+Alaska.
 
 ### Exercise 2
 
-Remove this text, and add your answer for Exercise 1 here. Add code
-chunks as needed. Don’t forget to label your code chunk. Do not use
-spaces in code chunk labels.
+``` r
+# Calculate the number of pairings using the data frames you have already made
+```
 
 ### Exercise 3
 
