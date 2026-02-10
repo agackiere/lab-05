@@ -41,7 +41,14 @@ Alaska.
 
 ``` r
 # Calculate the number of pairings using the data frames you have already made
+
+n_pairings <- nrow(dn_ak) * nrow(lq_ak)
+n_pairings
 ```
+
+    ## [1] 6
+
+There are 6 pairings to be made.
 
 ### Exercise 3
 

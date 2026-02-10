@@ -38,13 +38,14 @@ There are `r nrow(dn_ak)` Denny's locations in Alaska and `r nrow(lq_ak)`La Quin
 ### Exercise 2
 
 ```{r AK-DNandLQ-pairings}
-
 # Calculate the number of pairings using the data frames you have already made
 
-
+n_pairings <- nrow(dn_ak) * nrow(lq_ak)
+n_pairings
 
 ```
 
+There are `r nrow(dn_ak) * nrow(lq_ak)` pairings to be made.
 
 ### Exercise 3
 
