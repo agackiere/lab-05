@@ -177,22 +177,21 @@ summary(dn_lq_ak_mindist)
 
 ``` r
 # visualize! 
-ggplot(dn_lq_ak_mindist, aes(x = closest, y = 0)) +
-  geom_point(size = 3, color = "plum4") +
+ggplot(dn_lq_ak_mindist, aes(x = closest)) +
+  geom_histogram(bins = 30, fill = "plum", color = "plum4") +
   labs(
     x = "Distance to nearest La Quinta (km)",
-    y = "",
-    title = "Distances from Denny's to Nearest La Quinta in Alaska"
+    y = "Number of Denny's locations",
+    title = "How close is the nearest La Quinta to each Denny’s? (Alaska)"
   ) +
-  theme(axis.text.y = element_blank(),
-        axis.ticks.y = element_blank())
+  theme_minimal()
 ```
 
 ![](lab-05_files/figure-gfm/distribution-minAK-1.png)<!-- -->
 
 …
 
-### Exercise 9
+### Exercise 9: North Carolina
 
 ``` r
 # Filter the Denny’s df for NC
@@ -305,22 +304,21 @@ summary(dn_lq_nc_mindist)
 
 ``` r
 # visualize! 
-ggplot(dn_lq_nc_mindist, aes(x = closest, y = 0)) +
-  geom_point(size = 3, color = "plum4") +
+ggplot(dn_lq_nc_mindist, aes(x = closest)) +
+  geom_histogram(bins = 30, fill = "plum", color = "plum4") +
   labs(
     x = "Distance to nearest La Quinta (km)",
-    y = "",
-    title = "Distances from Denny's to Nearest La Quinta in North Carolina"
+    y = "Number of Denny's locations",
+    title = "How close is the nearest La Quinta to each Denny’s? (North Carolina)"
   ) +
-  theme(axis.text.y = element_blank(),
-        axis.ticks.y = element_blank())
+  theme_minimal()
 ```
 
 ![](lab-05_files/figure-gfm/NC-1.png)<!-- -->
 
 …
 
-### Exercise 10
+### Exercise 10: Texas
 
 ``` r
 # Filter the Denny’s df for TX
@@ -433,22 +431,21 @@ summary(dn_lq_tx_mindist)
 
 ``` r
 # visualize! 
-ggplot(dn_lq_tx_mindist, aes(x = closest, y = 0)) +
-  geom_point(size = 3, color = "plum4") +
+ggplot(dn_lq_tx_mindist, aes(x = closest)) +
+  geom_histogram(bins = 30, fill = "plum", color = "plum4") +
   labs(
     x = "Distance to nearest La Quinta (km)",
-    y = "",
-    title = "Distances from Denny's to Nearest La Quinta in Texas"
+    y = "Number of Denny's locations",
+    title = "How close is the nearest La Quinta to each Denny’s? (Texas)"
   ) +
-  theme(axis.text.y = element_blank(),
-        axis.ticks.y = element_blank())
+  theme_minimal()
 ```
 
 ![](lab-05_files/figure-gfm/TX-1.png)<!-- -->
 
 …
 
-### Exercise 11
+### Exercise 11: California
 
 ``` r
 # Filter the Denny’s df for CA
@@ -561,15 +558,14 @@ summary(dn_lq_ca_mindist)
 
 ``` r
 # visualize! 
-ggplot(dn_lq_ca_mindist, aes(x = closest, y = 0)) +
-  geom_point(size = 3, color = "plum4") +
+ggplot(dn_lq_ca_mindist, aes(x = closest)) +
+  geom_histogram(bins = 30, fill = "plum", color = "plum4") +
   labs(
     x = "Distance to nearest La Quinta (km)",
-    y = "",
-    title = "Distances from Denny's to Nearest La Quinta in Alaska"
+    y = "Number of Denny's locations",
+    title = "How close is the nearest La Quinta to each Denny’s? (California)"
   ) +
-  theme(axis.text.y = element_blank(),
-        axis.ticks.y = element_blank())
+  theme_minimal()
 ```
 
 ![](lab-05_files/figure-gfm/CA-1.png)<!-- -->
@@ -578,5 +574,9 @@ ggplot(dn_lq_ca_mindist, aes(x = closest, y = 0)) +
 
 ### Exercise 12
 
-Among the states you examined, where is Mitch Hedberg’s joke most likely
-to hold true? Explain your reasoning …
+Among the states you examined, Mitch Hedberg’s joke most likely to hold
+true in Texas and in California (so maybe the West Coast/South West).
+The reason for that is because the distance distribution is highly
+skewed, and most Denny’s establishments are very close to most La Quinta
+establishments in those states. North Carolina is a bit strange, in that
+there no apparent positive skew in the distribution. …
