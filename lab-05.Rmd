@@ -149,31 +149,172 @@ ggplot(dn_lq_ak_mindist, aes(x = closest, y = 0)) +
 ...
 
 ### Exercise 9
-```{r}
+```{r NC}
+
+# Filter the Denny’s df for NC
+dn_nc <- dennys %>%
+  filter(state == "NC")
+nrow(dn_nc)
+
+# Filter the La Quinta df for NC
+lq_nc <- laquinta %>%
+  filter(state == "NC")
+nrow(lq_nc)
+
+n_pairings <- nrow(dn_nc) * nrow(lq_nc)
+n_pairings
+
+dn_lq_nc <- full_join(dn_nc, lq_nc,
+  by = "state"
+)
+dn_lq_nc
+
+# distance
+dn_lq_nc <- dn_lq_nc %>%
+  mutate(distance = haversine(longitude.x, latitude.x,
+                              longitude.y, latitude.y))
+        
+# checking it worked                              
+head(dn_lq_nc$distance)
 
 
+# grouby by Denny's locations + new var w info for minimum distance
 
+dn_lq_nc_mindist <- dn_lq_nc %>%
+  group_by(address.x) %>%
+  mutate(distance = haversine(longitude.x, latitude.x, longitude.y, latitude.y)) %>%
+  summarize(closest = min(distance, na.rm = TRUE), .groups = "drop")
 
+# check 
+dn_lq_nc_mindist
+
+# summary statistics
+summary(dn_lq_nc_mindist)
+
+# visualize! 
+ggplot(dn_lq_nc_mindist, aes(x = closest, y = 0)) +
+  geom_point(size = 3, color = "plum4") +
+  labs(
+    x = "Distance to nearest La Quinta (km)",
+    y = "",
+    title = "Distances from Denny's to Nearest La Quinta in North Carolina"
+  ) +
+  theme(axis.text.y = element_blank(),
+        axis.ticks.y = element_blank())
 
 ```
 
 ...
 
-
 ### Exercise 10
-```{r}
+```{r TX}
+# Filter the Denny’s df for TX
+dn_tx <- dennys %>%
+  filter(state == "TX")
+nrow(dn_tx)
+
+# Filter the La Quinta df for TX
+lq_tx <- laquinta %>%
+  filter(state == "TX")
+nrow(lq_tx)
+
+n_pairings <- nrow(dn_tx) * nrow(lq_tx)
+n_pairings
+
+dn_lq_tx <- full_join(dn_tx, lq_tx,
+  by = "state"
+)
+dn_lq_tx
+
+# distance
+dn_lq_tx <- dn_lq_tx %>%
+  mutate(distance = haversine(longitude.x, latitude.x,
+                              longitude.y, latitude.y))
+        
+# checking it worked                              
+head(dn_lq_tx$distance)
 
 
+# grouby by Denny's locations + new var w info for minimum distance
 
+dn_lq_tx_mindist <- dn_lq_tx %>%
+  group_by(address.x) %>%
+  mutate(distance = haversine(longitude.x, latitude.x, longitude.y, latitude.y)) %>%
+  summarize(closest = min(distance, na.rm = TRUE), .groups = "drop")
 
+# check 
+dn_lq_tx_mindist
+
+# summary statistics
+summary(dn_lq_tx_mindist)
+
+# visualize! 
+ggplot(dn_lq_tx_mindist, aes(x = closest, y = 0)) +
+  geom_point(size = 3, color = "plum4") +
+  labs(
+    x = "Distance to nearest La Quinta (km)",
+    y = "",
+    title = "Distances from Denny's to Nearest La Quinta in Texas"
+  ) +
+  theme(axis.text.y = element_blank(),
+        axis.ticks.y = element_blank())
 
 ```
 
 ...
 
 ### Exercise 11
-```{r}
+```{r CA}
+# Filter the Denny’s df for CA
+dn_ca <- dennys %>%
+  filter(state == "CA")
+nrow(dn_ca)
 
+# Filter the La Quinta df for CA
+lq_ca <- laquinta %>%
+  filter(state == "CA")
+nrow(lq_ca)
+
+n_pairings <- nrow(dn_ca) * nrow(lq_ca)
+n_pairings
+
+dn_lq_ca <- full_join(dn_ca, lq_ca,
+  by = "state"
+)
+dn_lq_ca
+
+# distance
+dn_lq_ca <- dn_lq_ca %>%
+  mutate(distance = haversine(longitude.x, latitude.x,
+                              longitude.y, latitude.y))
+        
+# checking it worked                              
+head(dn_lq_ca$distance)
+
+
+# grouby by Denny's locations + new var w info for minimum distance
+
+dn_lq_ca_mindist <- dn_lq_ca %>%
+  group_by(address.x) %>%
+  mutate(distance = haversine(longitude.x, latitude.x, longitude.y, latitude.y)) %>%
+  summarize(closest = min(distance, na.rm = TRUE), .groups = "drop")
+
+# check 
+dn_lq_ca_mindist
+
+# summary statistics
+summary(dn_lq_ca_mindist)
+
+# visualize! 
+ggplot(dn_lq_ca_mindist, aes(x = closest, y = 0)) +
+  geom_point(size = 3, color = "plum4") +
+  labs(
+    x = "Distance to nearest La Quinta (km)",
+    y = "",
+    title = "Distances from Denny's to Nearest La Quinta in Alaska"
+  ) +
+  theme(axis.text.y = element_blank(),
+        axis.ticks.y = element_blank())
 
 
 
@@ -181,28 +322,10 @@ ggplot(dn_lq_ak_mindist, aes(x = closest, y = 0)) +
 ```
 
 ...
-
 
 ### Exercise 12
-```{r}
 
-
-
-
-
-```
-
-...
-
-### Exercise 13
-```{r}
-
-
-
-
-
-```
-
+Among the states you examined, where is Mitch Hedberg’s joke most likely to hold true? Explain your reasoning
 ...
 
 
